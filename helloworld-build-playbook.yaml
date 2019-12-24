@@ -8,6 +8,8 @@
       chdir: /opt/ansible
   - name: tag docker image
     command: "docker tag helloworldshankar vijayakrishnajava/helloworldshankar:latest"
+  - name: auth
+    command: "docker login -u={{user}} -p={{pass}}"
   - name: push the name to registry
     command: docker push vijayakrishnajava/helloworldshankar:latest
   - name: cleaning
