@@ -10,4 +10,7 @@
     command: "docker tag helloworldshankar vijayakrishnajava/helloworldshankar:latest"
   - name: push the name to registry
     command: docker push vijayakrishnajava/helloworldshankar:latest
+  - name: cleaning
+    command: docker system prune -f -a
+  
         
