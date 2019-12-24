@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: stop docker container
+    command: "docker stop vijayakrishnajava/helloworldshankar:latest"
+    ignore_errors: true
+  - name: remove existing docker container
+    command: docker rm vijayakrishnajava/helloworldshankar:latest
+    ignore_errors: true
+  - name: run docker container
+    command: "docker run -name helloworldshankar -d -p 8080:8080 vijayakrishnajava/helloworldshankar:latest"
+        
