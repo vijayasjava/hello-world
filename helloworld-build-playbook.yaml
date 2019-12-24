@@ -2,8 +2,11 @@
 - hosts: all
   become: true
   tasks:
+  - name: cleanup
+    command: "docker rmi helloworldshankar vijayakrishnajava/helloworldshankar:latest"
+    ignore_errors: yes
   - name: building docker image
-    command: docker build -t helloworldshankar .
+    command: "docker build -t helloworldshankar ."
     args:
       chdir: /opt/ansible
   - name: tag docker image
