@@ -15,5 +15,5 @@
   - name: tag docker image
     command: "docker tag helloworldshankar vijayakrishnajava/helloworldshankar:latest"
   - name: run docker container
-    command: "docker run -name helloworldshankar -d -p 8080:8080 vijayakrishnajava/helloworldshankar:latest"
+    command: "docker run --name helloworldshankar -d -p 8080:8080 vijayakrishnajava/helloworldshankar:latest"
         
