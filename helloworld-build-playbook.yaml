@@ -9,7 +9,7 @@
   - name: tag docker image
     command: "docker tag helloworldshankar vijayakrishnajava/helloworldshankar:latest"
   - name: auth
-    command: "docker login -u={{user}} -p={{pass}}"
+    command: "docker login -u={{arg1}} -p={{arg2}}"
   - name: push the name to registry
     command: docker push vijayakrishnajava/helloworldshankar:latest
   - name: cleaning
