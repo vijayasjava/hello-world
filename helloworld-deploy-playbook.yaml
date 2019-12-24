@@ -2,17 +2,17 @@
 - hosts: all
   become: true
   tasks:
-  - name: cleanup
-    command: "docker rmi helloworldshankar vijayakrishnajava/helloworldshankar:latest"
-    ignore_errors: yes
-  - name: cleaning
-    command: "docker system prune -f -a"
   - name: stop docker container
     command: "docker stop helloworldshankar"
     ignore_errors: true
   - name: remove existing docker container
     command: docker rm helloworldshankar
     ignore_errors: true
+  - name: cleanup
+    command: "docker rmi helloworldshankar vijayakrishnajava/helloworldshankar:latest"
+    ignore_errors: yes
   - name: run docker container
     command: "docker run --name helloworldshankar -d -p 8080:8080 vijayakrishnajava/helloworldshankar:latest"
+  - name: cleaning
+    command: "docker system prune -f -a"
         
